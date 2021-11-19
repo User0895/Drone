@@ -1,0 +1,27 @@
+# Tilt
+loco_drone.set_mode(loco_drone.MODE_ACCELEROMETER)
+time.sleep(0)
+loco_drone.set_mode(loco_drone.MODE_CONTROL)
+
+# Roll
+loco_drone.set_data(10, 0, 0)
+time.sleep(30)
+loco_drone.set_data(0, 0, 0)
+
+#Pitch
+loco_drone.set_data(0, 25, 0)
+time.sleep(30)
+loco_drone.set_data(0, 0, 0)
+
+# Roll/Pitch
+loco_drone.set_data(45, 30, 0)
+time.sleep(30)
+loco_drone.set_data(0, 0, 0)
+
+# Flip
+loco_drone.left_flip_drone()
+
+# Joystick
+loco_drone.set_mode(loco_drone.MODE_JOYSTICK)
+time.sleep(300)
+loco_drone.set_mode(loco_drone.MODE_CONTROL)
