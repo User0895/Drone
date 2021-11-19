@@ -31,9 +31,18 @@ def roll_right(value, wait):
     loco_drone.set_data(value, 0, 0)
     time.sleep(wait)
 
+# Forward
+def go_forward(value, wait):
+    loco_drone.set_data(0, value, 0)
+    time.sleep(wait)
+    loco_drone.set_data(0, 0, 0)
+    
 #EXECUTION---------------------------------------------------------------------------------
 
 vertical(2, 1)
+hover(0, 1)
+go_forward(2, 1)
+hover(0, 1)
 vertical(-2, 1)
 
 #END---------------------------------------------------------------------------------------
