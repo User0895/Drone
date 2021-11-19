@@ -35,14 +35,22 @@ def roll_right(value, wait):
 def go_forward(value, wait):
     loco_drone.set_data(0, value, 0)
     time.sleep(wait)
-    loco_drone.set_data(0, 0, 0)
     
+#JOYSTICK----------------------------------------------------------------------------------
+
+#Start Joystick Controls
+"""
+loco_drone.set_mode(loco_drone.MODE_JOYSTICK)
+time.sleep(300)
+loco_drone.set_mode(loco_drone.MODE_CONTROL)
+"""
+
+
 #EXECUTION---------------------------------------------------------------------------------
 
 vertical(2, 1)
 hover(0, 1)
-go_forward(2, 1)
-hover(0, 1)
+go_forward(3, 1)
 vertical(-2, 1)
 
 #END---------------------------------------------------------------------------------------
