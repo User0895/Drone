@@ -40,19 +40,19 @@ def vertical(value, wait=5):
     loco_drone.set_data(0, 0, 0)
 
 # Roll (L/R) - X value.
-def roll_right(value, wait=5):
+def roll_right(value=10, wait=5):
     loco_drone.set_data(value, 0, 0)
     time.sleep(wait)
     loco_drone.set_data(0, 0, 0)
 
 # Pitch (B/F) - Y value.
-def pitch_bf(value, wait=5):
+def pitch_bf(value=25, wait=5):
     loco_drone.set_data(0, value, 0)
     time.sleep(wait)
     loco_drone.set_data(0, 0, 0)
 
 # Roll/Pitch (L/R) - X, Y value.
-def pitch_lr(value1, value2, wait=5):
+def pitch_lr(value1=35, value2=40, wait=5):
     loco_drone.set_data(value1, value2, 0)
     time.sleep(wait)
     loco_drone.set_data(0, 0, 0)
