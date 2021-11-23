@@ -18,16 +18,13 @@ loco_drone.drone_takeoff()
 def invoke(input):
     if input.lower() == "tilt":
         loco_drone.set_mode(loco_drone.MODE_ACCELEROMETER)
-        break
     elif input.lower() == "control":
         loco_drone.set_mode(loco_drone.MODE_CONTROL)
-        break
     elif input.lower() == "joystick":
         loco_drone.set_mode(loco_drone.MODE_JOYSTICK)
-        break
     else:
         print("Invalid inpput.")
-        continue
+       
     
 #DEFINITIONS--------------------------------------------------------------------------------
 
@@ -62,16 +59,13 @@ def pitch_lr(value1, value2, wait=5):
 
 # Flip drone.
 def flip(input):
-    while True:
-        if input.lower() == "left":
-            loco_drone.left_flip_drone()
-            break
-        elif input.lower() == "right":
-            loco_drone.right_flip_drone()
-            break
-        else:
-            print("Invlaid input.")
-            continue
+    if input.lower() == "left":
+        loco_drone.left_flip_drone()
+    elif input.lower() == "right":
+        loco_drone.right_flip_drone()
+    else:
+        print("Invlaid input.")
+
     
 
 #EXECUTION---------------------------------------------------------------------------------
