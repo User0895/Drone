@@ -23,7 +23,9 @@ def invoke(input):
     elif input.lower() == "joystick":
         loco_drone.set_mode(loco_drone.MODE_JOYSTICK)
     else:
-        print("Invalid inpput.")
+        print("Invalid input.")
+
+invoke("default")
        
     
 #DEFINITIONS--------------------------------------------------------------------------------
@@ -64,14 +66,12 @@ def flip(input):
     elif input.lower() == "right":
         loco_drone.right_flip_drone()
     else:
-        print("Invlaid input.")
+        print("Invalid input.")
 
     
 
 #EXECUTION---------------------------------------------------------------------------------
 
-vertical()
-pitch_bf()
 hover()
 
 #END---------------------------------------------------------------------------------------
