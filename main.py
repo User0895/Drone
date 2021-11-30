@@ -18,7 +18,7 @@ loco_drone.drone_takeoff()
 def invoke(input):
     if input.lower() == "tilt":
         loco_drone.set_mode(loco_drone.MODE_ACCELEROMETER)
-    elif input.lower() == "control":
+    elif input.lower() == "control" or "default":
         loco_drone.set_mode(loco_drone.MODE_CONTROL)
     elif input.lower() == "joystick":
         loco_drone.set_mode(loco_drone.MODE_JOYSTICK)
@@ -28,7 +28,7 @@ def invoke(input):
     
 #DEFINITIONS--------------------------------------------------------------------------------
 
-# Hover
+# Hover - ISSUE: Drone heavily skewed to the left. Issue with syncing or code?
 def hover(wait=5):
     loco_drone.set_data(0, 0, 0)  
     time.sleep(wait) 
@@ -45,19 +45,19 @@ def roll_right(value=10, wait=5):
     time.sleep(wait)
     loco_drone.set_data(0, 0, 0)
 
-# Pitch (B/F) - Y value.
+# Pitch (B/F) - Y value - PARTIALLY tested. Partially works. 
 def pitch_bf(value=25, wait=5):
     loco_drone.set_data(0, value, 0)
     time.sleep(wait)
     loco_drone.set_data(0, 0, 0)
 
-# Roll/Pitch (L/R) - X, Y value.
+# Roll/Pitch (L/R) - X, Y value. - SEE previous.
 def pitch_lr(value1=35, value2=40, wait=5):
     loco_drone.set_data(value1, value2, 0)
     time.sleep(wait)
     loco_drone.set_data(0, 0, 0)
 
-# Flip drone.
+# Flip drone. WORKS
 def flip(input):
     if input.lower() == "left":
         loco_drone.left_flip_drone()
