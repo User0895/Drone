@@ -25,41 +25,41 @@ loco_drone.connect()
 loco_drone.controller_calibrate()
 loco_drone.drone_calibrate()
 loco_drone.drone_takeoff()
-invoke("default")
+loco_drone.set_mode(loco_drone.MODE_CONTROL)
        
-wait = 10
+wait = 5
     
 #DEFINITIONS--------------------------------------------------------------------------------
 
-# Hover - ISSUE: Drone heavily skewed to the left. Issue with syncing or code?
+# Hover - FUNCTIONAL: Insure drone is facing front (opposite of light)
 loco_drone.set_data(0, 0, 0)  
-time.sleep(wait) 
+time.sleep(10) 
 
-# Roll (Left)
-loco_drone.set_data(10, 0, 0)
-time.sleep(wait)
-loco_drone.set_data(0, 0, 0)
+# Roll (Left) - FUNCTIONAL: Tilt is minor.
+#loco_drone.set_data(10, 0, 0)
+#time.sleep(5)
+#loco_drone.set_data(0, 0, 0)
 
-# Roll (Right).
-loco_drone.set_data(-20, 0, 0)
-time.sleep(wait)
-loco_drone.set_data(0, 0, 0)
+# Roll (Right) - FUNCTIONAL: Tilt is minor.
+#loco_drone.set_data(-20, 0, 0)
+#time.sleep(wait)
+#loco_drone.set_data(0, 0, 0)
 
-# Pitch (Forward)
-loco_drone.set_data(0, 25, 0)
-time.sleep(wait)
-loco_drone.set_data(0, 0, 0)
+# Pitch (Forward) - FUNCTIONAL
+#loco_drone.set_data(0, 25, 0)
+#time.sleep(5)
+#loco_drone.set_data(0, 0, 0)
 
-# Pitch (Backward)
-loco_drone.set_data(0, -30, 0)
-time.sleep(wait)
-loco_drone.set_data(0, 0, 0)
+# Pitch (Backward) - FUNCTIONAL
+#loco_drone.set_data(0, -30, 0)
+#time.sleep(wait)
+#loco_drone.set_data(0, 0, 0)
 
 # Roll/Pitch (L/R) - X, Y value. - SEE previous.
 def roll_pitch(input):
-    if input.lower() == "lf" or "l/f":
+    if input.lower() == "lf" or "l/f": # FUNCTIONAL.
         loco_drone.set_data(45, 30, 0)
-    elif input.lower() == "rf" or "r/f":
+    elif input.lower() == "rf" or "r/f": # 
         loco_drone.set_data(-45, 30, 0)
     elif input.lower() == "lb" or "l/b":
         loco_drone.set_data(-45, -30, 0)
@@ -67,6 +67,8 @@ def roll_pitch(input):
         loco_drone.set_data(45, -30, 0)
     time.sleep(wait)
     loco_drone.set_data(0, 0, 0)
+
+#roll_pitch("lf")
 
 # Flip drone. WORKS
 def flip(input):
@@ -76,12 +78,6 @@ def flip(input):
         loco_drone.right_flip_drone()
     else:
         print("Invalid input.")
-
-#EXECUTION---------------------------------------------------------------------------------
-
-vertical()
-pitch_bf()
-hover()
 
 #END---------------------------------------------------------------------------------------
 
