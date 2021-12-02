@@ -63,14 +63,16 @@ def roll_pitch(input):
         loco_drone.set_data(-45, 30, 0)
     elif input.lower() == "lb" or "l/b":
         loco_drone.set_data(-45, -30, 0)
-    else:
+    elif input.lower() == "rb" or "r/b":
         loco_drone.set_data(45, -30, 0)
+    else:
+        print("Invalid input.")
     time.sleep(wait)
     loco_drone.set_data(0, 0, 0)
 
 #roll_pitch("lf")
 
-# Flip drone. WORKS
+# Flip Drone - FUNCTIONAL.
 def flip(input):
     if input.lower() == "left":
         loco_drone.left_flip_drone()
