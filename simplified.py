@@ -31,7 +31,7 @@ wait = 5
     
 #DEFINITIONS--------------------------------------------------------------------------------
 
-# Hover - FUNCTIONAL: Insure drone is facing front (opposite of light)
+# Hover - FUNCTIONAL: Ensure drone is facing front (opposite of light)
 loco_drone.set_data(0, 0, 0)  
 time.sleep(10) 
 
@@ -57,7 +57,7 @@ time.sleep(10)
 
 # Roll/Pitch (L/R) - X, Y value. - SEE previous.
 def roll_pitch(input):
-    if input.lower() == "lf" or "l/f": # FUNCTIONAL.
+    if input.lower() == "lf" or "l/f": # FUNCTIONAL?.
         loco_drone.set_data(45, 30, 0)
     elif input.lower() == "rf" or "r/f": # 
         loco_drone.set_data(-45, 30, 0)
