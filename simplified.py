@@ -31,9 +31,12 @@ wait = 5
     
 #DEFINITIONS--------------------------------------------------------------------------------
 
-# Hover - FUNCTIONAL: Ensure drone is facing front (opposite of light)
+# Hover - FUNCTIONAL: Still skewed.
 loco_drone.set_data(0, 0, 0)  
 time.sleep(10) 
+
+invoke("joystick")
+time.sleep(50)
 
 # Roll (Left) - FUNCTIONAL: Tilt is minor.
 #loco_drone.set_data(10, 0, 0)
@@ -72,6 +75,26 @@ def roll_pitch(input):
 
 #roll_pitch("lf")
 
+# Roll/Pitch LF - FUNCTIONAL
+#loco_drone.set_data(45, 30, 0)
+#time.sleep(wait)
+#loco_drone.set_data(0, 0, 0)
+
+# Roll/Pitch RF - FUNCTIONAL
+#loco_drone.set_data(-45, 30, 0)
+#time.sleep(wait)
+#loco_drone.set_data(0, 0, 0)
+
+# Roll/Pitch LB - FUNCTIONAL
+#loco_drone.set_data(-45, -30, 0)
+#time.sleep(wait)
+#loco_drone.set_data(0, 0, 0)
+
+# Roll/Pitch RB - FUNCTIONAL
+#loco_drone.set_data(45, -30, 0)
+#time.sleep(3)
+#loco_drone.set_data(0, 0, 0)
+
 # Flip Drone - FUNCTIONAL.
 def flip(input):
     if input.lower() == "left":
@@ -80,6 +103,11 @@ def flip(input):
         loco_drone.right_flip_drone()
     else:
         print("Invalid input.")
+
+for i in range(10):
+    flip("left")
+    hover()
+    flip("right")
 
 #END---------------------------------------------------------------------------------------
 
