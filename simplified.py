@@ -35,9 +35,6 @@ wait = 5
 loco_drone.set_data(0, 0, 0)  
 time.sleep(10) 
 
-invoke("joystick")
-time.sleep(50)
-
 # Roll (Left) - FUNCTIONAL: Tilt is minor.
 #loco_drone.set_data(10, 0, 0)
 #time.sleep(5)
@@ -56,6 +53,16 @@ time.sleep(50)
 # Pitch (Backward) - FUNCTIONAL
 #loco_drone.set_data(0, -30, 0)
 #time.sleep(wait)
+#loco_drone.set_data(0, 0, 0)
+
+# Vertical Up
+#loco_drone.set_data(0, 0, 1)
+#time.sleep(0)
+#loco_drone.set_data(0, 0, 0)
+
+# Vertical Down
+#loco_drone.set_data(0, 0, -1)
+#time.sleep(0)
 #loco_drone.set_data(0, 0, 0)
 
 # Roll/Pitch (L/R) - X, Y value. - SEE previous.
@@ -103,11 +110,6 @@ def flip(input):
         loco_drone.right_flip_drone()
     else:
         print("Invalid input.")
-
-for i in range(10):
-    flip("left")
-    hover()
-    flip("right")
 
 #END---------------------------------------------------------------------------------------
 
