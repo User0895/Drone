@@ -31,13 +31,18 @@ wait = 5
     
 #DEFINITIONS--------------------------------------------------------------------------------
 
+# Joystick (untested)
+def invoke("joystick")
+time.sleep(60)
+def invoke("default")
+
 # Hover - FUNCTIONAL: Still skewed.
 loco_drone.set_data(0, 0, 0)  
-time.sleep(10) 
+time.sleep(wait) 
 
 # Roll (Left) - FUNCTIONAL: Tilt is minor.
 #loco_drone.set_data(10, 0, 0)
-#time.sleep(5)
+#time.sleep(wait)
 #loco_drone.set_data(0, 0, 0)
 
 # Roll (Right) - FUNCTIONAL: Tilt is minor.
@@ -65,23 +70,6 @@ time.sleep(10)
 #time.sleep(0)
 #loco_drone.set_data(0, 0, 0)
 
-# Roll/Pitch (L/R) - X, Y value. - SEE previous.
-def roll_pitch(input):
-    if input.lower() == "lf" or "l/f": # FUNCTIONAL?.
-        loco_drone.set_data(45, 30, 0)
-    elif input.lower() == "rf" or "r/f": # 
-        loco_drone.set_data(-45, 30, 0)
-    elif input.lower() == "lb" or "l/b":
-        loco_drone.set_data(-45, -30, 0)
-    elif input.lower() == "rb" or "r/b":
-        loco_drone.set_data(45, -30, 0)
-    else:
-        print("Invalid input.")
-    time.sleep(wait)
-    loco_drone.set_data(0, 0, 0)
-
-#roll_pitch("lf")
-
 # Roll/Pitch LF - FUNCTIONAL
 #loco_drone.set_data(45, 30, 0)
 #time.sleep(wait)
@@ -102,7 +90,7 @@ def roll_pitch(input):
 #time.sleep(3)
 #loco_drone.set_data(0, 0, 0)
 
-# Tilt Command
+# Tilt
 loco_drone.set_mode(loco_drone.MODE_ACCELEROMETER)
 time.sleep(0)
 loco_drone.set_mode(loco_drone.MODE_CONTROL)
