@@ -102,12 +102,17 @@ def roll_pitch(input):
 #time.sleep(3)
 #loco_drone.set_data(0, 0, 0)
 
+# Tilt Command
+loco_drone.set_mode(loco_drone.MODE_ACCELEROMETER)
+time.sleep(0)
+loco_drone.set_mode(loco_drone.MODE_CONTROL)
+
 # Flip Drone - FUNCTIONAL.
 def flip(input):
     if input.lower() == "left":
         loco_drone.left_flip_drone()
     elif input.lower() == "right":
-        loco_drone.right_flip_drone()
+        loco_drone.right_flip_drone() 
     else:
         print("Invalid input.")
 
